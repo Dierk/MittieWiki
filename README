@@ -1,0 +1,7 @@
+MittieWiki is a single-user personal wiki, in fact a port of my personal (ruby) wiki that I have used for 8 years now.
+
+The new system uses the Grails platform, mainly for the sake of easier extensibility and readability of the code.
+
+This is a spare-time pet project, which has no roadmap and no promised features and milestones whatsoever.
+
+Have at it —Dierk (Mittie) König
