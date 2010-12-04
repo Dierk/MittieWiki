@@ -1,3 +1,6 @@
 .gradle
 .idea
 target
+dtd
+out
+*.log
