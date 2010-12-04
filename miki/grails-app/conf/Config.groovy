@@ -81,3 +81,5 @@ log4j = {
 
     warn   'org.mortbay.log'
 }
+
+miki.pages.dir = '/scripts/ruby/wiki' // todo: move to a better location
