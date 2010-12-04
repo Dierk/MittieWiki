@@ -48,12 +48,15 @@ grails.spring.bean.packages = []
 environments {
     production {
         grails.serverURL = "http://www.changeme.com"
+        miki.pages.dir = '/scripts/ruby/wiki'
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
+        miki.pages.dir = '/scripts/ruby/wiki'
     }
     test {
         grails.serverURL = "http://localhost:8080/${appName}"
+        miki.pages.dir = 'test/pages'
     }
 
 }
@@ -81,5 +84,3 @@ log4j = {
 
     warn   'org.mortbay.log'
 }
-
-miki.pages.dir = '/scripts/ruby/wiki' // todo: move to a better location
