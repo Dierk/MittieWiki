@@ -5,7 +5,7 @@ The new system uses the Grails platform, mainly for the sake of easier extensibi
 and readability of the code.
 
 This is a spare-time pet project, which has no roadmap and no promised features and milestones whatsoever.
-Feel to use it to your liking but do *not expect any support* from my side.
+Feel free to use it to your liking but do _not expect any support_ from my side.
 
 General concept
 ---------------
@@ -24,4 +24,4 @@ capabilities the miki has, will be a question of discovery.
 
 
 Have at it
-—Dierk (Mittie) König
+—-Dierk (Mittie) König
