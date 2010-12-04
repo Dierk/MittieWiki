@@ -4,17 +4,19 @@ import grails.plugin.spock.UnitSpec
 
 class CookServiceSpec extends UnitSpec {
 
+    CookService service = new CookService(pageDir: new File('test/pages'))
+
     def "content that contains no wiki word should be rendered without anchors"() {
         expect:
-        new CookService().cook(raw) == raw
+        service.cook(raw) == raw
 
         where:
-        raw << ['', 'nolink', 'Nolink', 'Aa']
+        raw << ['', 'lowercase', 'Nocamelhump', 'ProperPatternButNoSuchPage']
     }
 
-    def "content that contains a wiki word like should be rendered with an anchor"() {
+    def "content that points to a wiki page should be rendered with an anchor"() {
         expect:
-        new CookService().cook(raw) =~ /href='$raw'/
+        service.cook(raw) =~ /href='$raw'/
 
         where:
         raw << ['AaAa', 'AaAaAa', 'Y10M12D04']
