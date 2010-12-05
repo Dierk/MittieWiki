@@ -1,13 +1,11 @@
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <title>Creating ${name}</title>
-    </head>
-    <body>
-    <pre>
-        Page ${name} is not yet known.
-        tbd
-        create page ${name} here.
-    </pre>
-    </body>
+<head>
+    <meta name="layout" content="main"/>
+    <title>Unknown ${name}</title>
+</head>
+<body>
+<p>There is no such page with name: ${name}.</p>
+<p>Do you want to <a href="${name}/edit" accesskey="c">create page ${name}</a>?
+</p>
+</body>
 </html>

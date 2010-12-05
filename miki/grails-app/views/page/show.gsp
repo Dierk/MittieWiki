@@ -7,6 +7,7 @@
     <h1>${name}</h1>
     <pre width="100%">${content}</pre>
     <hr>
-    <a href="${name}/edit" accesskey="e">edit</a>
+    <a href="${name}/edit" accesskey="e">edit</a> |
+    <a href="${name}/open" accesskey="o">finder</a>
     </body>
 </html>

@@ -1,8 +1,9 @@
 html * {
-    margin: 20px;
+    margin: 0px;
 }
 
 body {
+    margin: 40px;
     background: #fff;
     color: #333;
     font: 12px verdana, arial, helvetica, sans-serif;

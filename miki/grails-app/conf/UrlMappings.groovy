@@ -3,10 +3,12 @@ class UrlMappings {
 	static mappings = {
 
         // all requests go to the page controller, which dispatches to the page
-		"/$page/edit"(controller: 'page', action: 'edit')
-		"/$page"(controller: 'page')
+		"/$page/$action?"(controller: 'page')
 
-		"/"(view:"/index")
+		"/" {
+            controller = 'page'
+            page = "FrontPage"
+        }
 		"500"(view:'/error')
 	}
 }
