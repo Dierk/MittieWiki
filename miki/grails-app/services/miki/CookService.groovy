@@ -24,6 +24,12 @@ class CookService {
         String result = rawContent.replaceAll(WIKI_WORD_PATTERN) { name, rest ->
             isKnown(name) ? "<a href='/miki/$name'>$name</a>" : name
         }
+        def uriPattern = /[.a-zA-Z0-9\/\-@&?=:_;~+!#$%^*()\[\]{}]+/
+        def protocols = /(http|https|mailto|ftp|file)/
+        result = result.replaceAll(/$protocols:$uriPattern/) { match, rest ->
+            "<a href='$match'>$match</a>"
+        }
+
         return result
     }
 
