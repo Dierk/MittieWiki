@@ -16,7 +16,7 @@ class CookServiceSpec extends UnitSpec {
 
     def "content that points to a wiki page should be rendered with an anchor"() {
         expect:
-        service.cook(raw) =~ /href='$raw'/
+        service.cook(raw) =~ /href='\/miki\/$raw'/
 
         where:
         raw << ['AaAa', 'AaAaAa', 'Y10M12D04']
