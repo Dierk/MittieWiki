@@ -6,8 +6,13 @@ class CookService {
 
     static transactional = false
 
-    final String CAP_WORD = '[A-Z][a-z0-9]+'
-    final def WIKI_WORD_PATTERN = ~/$CAP_WORD($CAP_WORD)+/
+    static final String CAP_WORD = '[A-Z][a-z0-9]+'
+    static final WIKI_WORD_PATTERN = ~/$CAP_WORD($CAP_WORD)+/
+
+    static final URI_PATTERN = /[.a-zA-Z0-9\/\-@&?=:_;~+!#$%^*()\[\]{}]+/
+    static final PROTOCOLS = /(http|https|mailto|ftp|file)/
+    static final URL_PATTERN = /$PROTOCOLS:$URI_PATTERN/
+
     File pageDir
 
     List<String> listPageNames() {
@@ -24,9 +29,7 @@ class CookService {
         String result = rawContent.replaceAll(WIKI_WORD_PATTERN) { name, rest ->
             isKnown(name) ? "<a href='/miki/$name'>$name</a>" : name
         }
-        def uriPattern = /[.a-zA-Z0-9\/\-@&?=:_;~+!#$%^*()\[\]{}]+/
-        def protocols = /(http|https|mailto|ftp|file)/
-        result = result.replaceAll(/$protocols:$uriPattern/) { match, rest ->
+        result = result.replaceAll(URL_PATTERN) { match, rest ->
             "<a href='$match'>$match</a>"
         }
 
