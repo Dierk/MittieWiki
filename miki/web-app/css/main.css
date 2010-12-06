@@ -50,3 +50,34 @@ input:focus, select:focus, textarea:focus {
     float: left;
     margin: 0 15px 10px 15px;
 }
+
+
+td.today {
+    border-style:solid;
+    border-color: #e43b03;
+    border-width: 2px;
+    background-color:#ffd700;
+}
+td.events {
+    vertical-align:top;
+    width:14%;
+    font-size:11px;
+    padding:2px 10px 2px 10px;
+}
+td.weekend {
+    background-color: #8fcb33;
+}
+td.workday {
+    background-color:#add8e6;
+}
+th.events {
+    background-color:#48802c;
+    vertical-align:top;
+    width:14%;
+    font-size:12px;
+    font-weight:bold;
+    color:#ffd700;
+}
+p.events {
+    color:gray;
+}

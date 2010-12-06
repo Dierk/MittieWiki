@@ -10,8 +10,14 @@ class CookService {
     final def WIKI_WORD_PATTERN = ~/$CAP_WORD($CAP_WORD)+/
     File pageDir
 
+    List<String> listPageNames() {
+        def dir = getPageDir()
+        def pageFiles = dir.listFiles().grep {it.name.endsWith('.wiki')}
+        pageFiles.collect { it.name - '.wiki'}
+    }
+
     String cookPage(String page) {
-        return cook(getRawFile(page).getText("ISO-8859-1"))
+        return cook(getRawText(page))
     }
 
     String cook(String rawContent) {
@@ -21,8 +27,12 @@ class CookService {
         return result
     }
 
-    File getRawFile(page) {
+    File getRawFile(String page) {
         new File(getPageDir(), page + '.wiki')
+    }
+
+    String getRawText(String page) {
+        getRawFile(page).getText("ISO-8859-1")
     }
 
     boolean isKnown(String page) {

@@ -9,6 +9,9 @@ class UrlMappings {
             controller = 'page'
             page = "FrontPage"
         }
+
+        "/events"(controller: 'event', action:'list')
+        
 		"500"(view:'/error')
 	}
 }
