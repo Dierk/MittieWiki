@@ -22,7 +22,7 @@ class CookService {
 
     String cook(String rawContent) {
         String result = rawContent.replaceAll(WIKI_WORD_PATTERN) { name, rest ->
-            isKnown(name) ? "<a href='$name'>$name</a>" : name
+            isKnown(name) ? "<a href='/miki/$name'>$name</a>" : name
         }
         return result
     }

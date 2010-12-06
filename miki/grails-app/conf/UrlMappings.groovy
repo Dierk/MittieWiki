@@ -11,7 +11,8 @@ class UrlMappings {
         }
 
         "/events"(controller: 'event', action:'list')
-        
+        "/find/$term"(controller: 'find', action:'list')
+
 		"500"(view:'/error')
 	}
 }

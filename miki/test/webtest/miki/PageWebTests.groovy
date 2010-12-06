@@ -13,6 +13,13 @@ class PageWebTests extends grails.util.WebTest {
         verifyTitle 'SimplePage'
     }
 
+    void testTagging() {
+        invoke 'SimplePage'
+        clickLink 'SimplePage'
+        verifyTitle 'Links to SimplePage'
+        clickLink 'LinkPage'
+    }
+
     void testEventsPage() {
         File eventsFile = new File('test/pages/EventProvider.wiki')
         if (eventsFile.exists()) eventsFile.delete()

@@ -4,7 +4,7 @@
         <title>${name}</title>
     </head>
     <body>
-    <h1>${name}</h1>
+    <a href="${createLink(url:'find/'+name)}"><h1>${name}</h1></a>
     <pre width="100%">${content}</pre>
     <hr style="margin-top:20px">|
     <a href="${name}/edit" accesskey="e">edit</a> |
