@@ -20,7 +20,7 @@ class PageController {
         File contentFile = cookService.getRawFile(params.page)
         def p = "mate -w $contentFile.absolutePath".execute()
         p.waitForProcessOutput()
-        redirect action: index
+        redirect action: index, params:params
     }
 
     def open = {
