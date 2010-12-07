@@ -2,8 +2,8 @@ class UrlMappings {
 
 	static mappings = {
 
-        "/events"       (controller: 'event', action:'list')
-        "/find/$action" (controller: 'find',  action:'list')
+        "/event/$action" (controller: 'event')
+        "/find/$action"  (controller: 'find')
     	"/" {
             controller = 'page'
             page = "FrontPage"
