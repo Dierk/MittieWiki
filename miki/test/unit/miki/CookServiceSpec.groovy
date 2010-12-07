@@ -8,7 +8,7 @@ class CookServiceSpec extends UnitSpec {
 
     def "content that contains no valid reference should be rendered without anchors"() {
         expect:
-        service.cook(raw) == raw
+        service.cook(raw){it} == raw
 
         where:
         raw << ['', 'lowercase', 'Nocamelhump', 'ProperPatternButNoSuchPage']
@@ -16,7 +16,7 @@ class CookServiceSpec extends UnitSpec {
 
     def "render proper urls as anchors"() {
         expect:
-        service.cook(raw) =~ /href='${raw.trim()}'/
+        service.cook(raw){it} =~ /href='${raw.trim()}'/
 
         where:
         raw << ['http://canoo.com', 'file:///data.txt ', 'https://-_./']
@@ -24,7 +24,7 @@ class CookServiceSpec extends UnitSpec {
 
     def "content that points to a wiki page should be rendered with an anchor"() {
         expect:
-        service.cook(raw) =~ /href='.*$raw'/
+        service.cook(raw){it} =~ /href='.*$raw'/
 
         where:
         raw << ['AaAa', 'AaAaAa', 'Y10M12D04']

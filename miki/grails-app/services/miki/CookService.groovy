@@ -11,7 +11,7 @@ class CookService {
 
     static final URI_PATTERN = /[.a-zA-Z0-9\/\-@&?=:_;~+!#$%^*()\[\]{}]+/
     static final PROTOCOLS = /(http|https|mailto|ftp|file)/
-    static final URL_PATTERN = /$PROTOCOLS:$URI_PATTERN/
+    static final URL_PATTERN = ~/$PROTOCOLS:$URI_PATTERN/
 
     File pageDir
 
@@ -21,13 +21,16 @@ class CookService {
         pageFiles.collect { it.name - '.wiki'}
     }
 
-    String cookPage(String page) {
-        return cook(getRawText(page))
+    String cookPage(String page, Closure pageRef) {
+        return cook(getRawText(page),pageRef)
     }
 
-    String cook(String rawContent) {
+    /**
+     * @param pageRef Strategy on how to make a proper href to a wiki page
+     */
+    String cook(String rawContent, Closure pageRef) {
         String result = rawContent.replaceAll(WIKI_WORD_PATTERN) { name, rest ->
-            isKnown(name) ? "<a href='/miki/$name'>$name</a>" : name
+            isKnown(name) ? "<a href='${pageRef(name)}'>$name</a>" : name
         }
         result = result.replaceAll(URL_PATTERN) { match, rest ->
             "<a href='$match'>$match</a>"

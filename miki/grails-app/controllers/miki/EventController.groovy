@@ -3,8 +3,11 @@ package miki
 class EventController {
 
     def cookService
+    def pageController
 
     def index = { redirect action: list }
+
+    Closure pageRef = {target -> createLink(controller: target, action:'') }
 
     def list = {
         def result = new LinkedList()
@@ -12,7 +15,11 @@ class EventController {
             def text = cookService.getRawText(page)
             text.eachMatch(~/(\d\d\.\d\d\.\d\d)(.*)/) { match, date, note ->
                 def day = Date.parse('dd.MM.yy', date)
-                result << [page:page , date: day, note: cookService.cook(note)]
+                result << [
+                        page: page,
+                        date: day,
+                        note: cookService.cook(note, pageRef)
+                ]
             }
         }
         [events: result.sort{it.date}.reverse()]

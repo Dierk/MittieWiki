@@ -33,4 +33,23 @@ class PageWebTests extends grails.util.WebTest {
         verifyTitle 'EventProvider'
     }
 
+    void testFindWithVariants() {
+        group(description:'find term "Simple"') {
+            invoke 'SimplePage'
+            setInputField name: 'term', value: 'Simple'
+            clickButton 'find'
+        }
+        verifyTitle 'Links to Simple'
+        verifyText regex:true, 'some content with a link to .*SimplePage'
+        group(description:'found pages and links work') {
+            clickLink 'LinkPage'
+            previousResponse()
+            clickLink 'SimplePage'
+        }
+        group(description:'Backlinks are still working'){
+            clickLink 'SimplePage'
+            clickLink 'LinkPage'
+        }
+    }
+
 }
