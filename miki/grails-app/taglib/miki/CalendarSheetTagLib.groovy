@@ -3,7 +3,7 @@ package miki
 import groovy.xml.MarkupBuilder
 
 class CalendarSheetTagLib {
-
+    def out
 
     def sheet = { attributes, body ->
         def var = attributes.var ?: "event"
