@@ -24,7 +24,9 @@ class PageWebTests extends grails.util.WebTest {
         File eventsFile = new File('test/pages/EventProvider.wiki')
         if (eventsFile.exists()) eventsFile.delete()
         eventsFile.withWriter('ISO-8859-1') { out ->
-            out << new Date().format('dd.MM.yy') << " first date"
+            def today = new Date().format('dd.MM.yy')
+            out << today << " reference to SimplePage as wiki link\n"
+            out << today << " another reference for sorting\n"
         }
         invoke 'SimplePage'
         clickLink 'events'

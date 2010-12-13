@@ -5,8 +5,6 @@ class EventController {
     def cookService
     def pageController
 
-    def index = { redirect action: list }
-
     Closure pageRef = {target -> createLink(controller: target, action:'') }
 
     def list = {
