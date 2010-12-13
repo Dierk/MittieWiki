@@ -4,3 +4,7 @@ target
 dtd
 out
 *.log
+*.ser
+test/pages/EventProvider.wiki
+*c.tld
+*fmt.tld
