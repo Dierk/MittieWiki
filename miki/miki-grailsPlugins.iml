@@ -4,7 +4,8 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/webtest-3.0.0/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/webtest-3.0.0/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/code-coverage-1.2/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -12,35 +13,40 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/hibernate-1.3.4">
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/hibernate-1.3.4/target/classes" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/hibernate-1.3.4/target/test-classes" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/hibernate-1.3.4/web-app/plugins" />
+    <content url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/code-coverage-1.2">
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/code-coverage-1.2/target/classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/code-coverage-1.2/target/test-classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/code-coverage-1.2/web-app/plugins" />
     </content>
-    <content url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/spock-0.5-groovy-1.7">
-      <sourceFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/spock-0.5-groovy-1.7/src/java" isTestSource="false" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/spock-0.5-groovy-1.7/target/classes" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/spock-0.5-groovy-1.7/target/test-classes" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/spock-0.5-groovy-1.7/web-app/plugins" />
+    <content url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/hibernate-1.3.4">
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/hibernate-1.3.4/target/classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/hibernate-1.3.4/target/test-classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/hibernate-1.3.4/web-app/plugins" />
     </content>
-    <content url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/tomcat-1.3.4">
-      <sourceFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/tomcat-1.3.4/src/groovy" isTestSource="false" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/tomcat-1.3.4/target/classes" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/tomcat-1.3.4/target/test-classes" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/tomcat-1.3.4/web-app/plugins" />
+    <content url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/spock-0.5-groovy-1.7">
+      <sourceFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/spock-0.5-groovy-1.7/src/java" isTestSource="false" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/spock-0.5-groovy-1.7/target/classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/spock-0.5-groovy-1.7/target/test-classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/spock-0.5-groovy-1.7/web-app/plugins" />
     </content>
-    <content url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/webtest-3.0.0">
-      <sourceFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/webtest-3.0.0/src/groovy" isTestSource="false" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/webtest-3.0.0/target/classes" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/webtest-3.0.0/target/test-classes" />
-      <excludeFolder url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/webtest-3.0.0/web-app/plugins" />
+    <content url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/tomcat-1.3.4">
+      <sourceFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/tomcat-1.3.4/src/groovy" isTestSource="false" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/tomcat-1.3.4/target/classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/tomcat-1.3.4/target/test-classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/tomcat-1.3.4/web-app/plugins" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/webtest-3.0.0">
+      <sourceFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/webtest-3.0.0/src/groovy" isTestSource="false" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/webtest-3.0.0/target/classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/webtest-3.0.0/target/test-classes" />
+      <excludeFolder url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/webtest-3.0.0/web-app/plugins" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
       <library name="Grails User Library">
         <CLASSES>
-          <root url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/tomcat-1.3.4/lib" />
+          <root url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/tomcat-1.3.4/lib" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit-dep/jars/junit-dep-4.8.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.spockframework/spock-core/jars/spock-core-0.5-groovy-1.7.jar!/" />
@@ -70,13 +76,16 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/commons-httpclient/commons-httpclient/jars/commons-httpclient-3.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.htmlunit/htmlunit/jars/htmlunit-2.4.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.canoo.webtest/webtest/jars/webtest-3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-tree/jars/asm-tree-3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/jars/asm-3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.cobertura/cobertura/jars/cobertura-1.9.4.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/.grails/1.3.4/projects/miki/plugins/tomcat-1.3.4/lib" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/.grails/1.3.5/projects/miki/plugins/tomcat-1.3.4/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="grails-1.3.4" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-1.3.5" level="application" />
   </component>
 </module>
 
