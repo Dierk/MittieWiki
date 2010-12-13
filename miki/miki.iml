@@ -30,19 +30,22 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea" />
-      <excludeFolder url="file://$MODULE_DIR$/.settings" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/test-classes" />
       <excludeFolder url="file://$MODULE_DIR$/web-app/plugins" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="grails-1.3.5" level="application" />
     <orderEntry type="module-library">
       <library name="Grails User Library">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ant/ant-launcher/jars/ant-launcher-1.7.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ant/ant/jars/ant-1.7.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-tree/jars/asm-tree-3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/jars/asm-3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.cobertura/cobertura/jars/cobertura-1.9.4.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit-dep/jars/junit-dep-4.8.2.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.spockframework/spock-core/jars/spock-core-0.5-groovy-1.7.jar!/" />
@@ -61,8 +64,6 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/javax.mail/mail/jars/mail-1.4.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/bsf/bsf/jars/bsf-2.4.0.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ant/ant-apache-bsf/jars/ant-apache-bsf-1.7.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ant/ant-launcher/jars/ant-launcher-1.7.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ant/ant/jars/ant-1.7.0.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.w3c.css/sac/jars/sac-1.3.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.cssparser/cssparser/jars/cssparser-0.9.5.jar!/" />
@@ -72,16 +73,12 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/commons-httpclient/commons-httpclient/jars/commons-httpclient-3.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.htmlunit/htmlunit/jars/htmlunit-2.4.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.canoo.webtest/webtest/jars/webtest-3.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm-tree/jars/asm-tree-3.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/jars/asm-3.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/net.sourceforge.cobertura/cobertura/jars/cobertura-1.9.4.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="grails-1.3.5" level="application" />
     <orderEntry type="module" module-name="miki-grailsPlugins" />
   </component>
 </module>
