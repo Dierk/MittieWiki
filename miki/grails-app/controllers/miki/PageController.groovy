@@ -1,5 +1,7 @@
 package miki
 
+import grails.util.GrailsConfig
+
 class PageController {
 
     def cookService
@@ -18,13 +20,13 @@ class PageController {
 
     def edit = {
         File contentFile = cookService.getRawFile(params.page)
-        def p = "mate -w $contentFile.absolutePath".execute()
+        def p = (GrailsConfig.miki.command.edit.toString() + ' '+ contentFile.absolutePath).execute()
         p.waitForProcessOutput()
         redirect action: index, params:params
     }
 
     def open = {
-        "open ${cookService.getPageDir()}".execute()
-        redirect action: index
+        (GrailsConfig.miki.command.open.toString() + ' ' + cookService.getPageDir()).execute()
+        redirect action: index, params:params
     }
 }

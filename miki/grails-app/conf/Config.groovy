@@ -49,14 +49,20 @@ environments {
     production {
         grails.serverURL = "http://www.changeme.com"
         miki.pages.dir = '/scripts/ruby/wiki'
+        miki.command.open = 'open'
+        miki.command.edit = 'mate -w'
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
         miki.pages.dir = '/scripts/ruby/wiki'
+        miki.command.open = 'open'
+        miki.command.edit = 'mate -w'
     }
     test {
         grails.serverURL = "http://localhost:8080/${appName}"
         miki.pages.dir = 'test/pages'
+        miki.command.open = 'echo'
+        miki.command.edit = 'echo'
     }
 
 }
