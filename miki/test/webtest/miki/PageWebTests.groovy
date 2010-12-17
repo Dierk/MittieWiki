@@ -54,4 +54,17 @@ class PageWebTests extends grails.util.WebTest {
         }
     }
 
+    void testFindByPageTile() {
+        def unReferencedPageName = 'AaAa'
+        group(description:'find a page by title that referenced from no other page') {
+            invoke 'SimplePage'
+            setInputField name: 'term', value: unReferencedPageName
+            clickButton 'find'
+        }
+        verifyTitle "Links to $unReferencedPageName"
+        verifyText unReferencedPageName
+        verifyText 'AaAa.*?page itself',  regex:true, description: 'full title match'
+        verifyText 'AaAaAa.*?page itself',regex:true, description: 'page title submatch'
+    }
+
 }

@@ -9,6 +9,9 @@ class FindController {
     def list = {
         def result = new LinkedList()
         for (page in cookService.listPageNames()) {
+            if(page.contains(params.term)) {
+                result << [page:page, note: 'The page itself, by title']
+            }
             def text = cookService.getRawText(page)
             text.eachMatch(~/.*(${params.term})(.*)/) { match, term, note ->
                 result << [page: page, note: cookService.cook(match, pageRef)]

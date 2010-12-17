@@ -6,7 +6,7 @@ class CookServiceSpec extends UnitSpec {
 
     CookService service = new CookService(pageDir: new File('test/pages'))
 
-    def "content that contains no valid reference should be rendered without anchors"() {
+    def "content that contains no valid reference should be rendered without anchors"(raw) {
         expect:
         service.cook(raw){it} == raw
 
@@ -14,7 +14,7 @@ class CookServiceSpec extends UnitSpec {
         raw << ['', 'lowercase', 'Nocamelhump', 'ProperPatternButNoSuchPage']
     }
 
-    def "render proper urls as anchors"() {
+    def "render proper urls as anchors"(raw) {
         expect:
         service.cook(raw){it} =~ /href='${raw.trim()}'/
 
@@ -22,7 +22,7 @@ class CookServiceSpec extends UnitSpec {
         raw << ['http://canoo.com', 'file:///data.txt ', 'https://-_./']
     }
 
-    def "content that points to a wiki page should be rendered with an anchor"() {
+    def "content that points to a wiki page should be rendered with an anchor"(raw) {
         expect:
         service.cook(raw){it} =~ /href='.*$raw'/
 
