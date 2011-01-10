@@ -2,7 +2,7 @@ package miki
 
 class FindController {
 
-    def cookService
+    CookService cookService
 
     Closure pageRef = {target -> createLink(controller: target, action:'') }
 

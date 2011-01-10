@@ -4,7 +4,7 @@ import grails.util.GrailsConfig
 
 class PageController {
 
-    def cookService
+    CookService cookService
 
     Closure pageRef = {target -> createLink(controller: target, action:'') }
 

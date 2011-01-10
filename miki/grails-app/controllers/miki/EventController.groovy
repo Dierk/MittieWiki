@@ -2,8 +2,7 @@ package miki
 
 class EventController {
 
-    def cookService
-    def pageController
+    CookService cookService
 
     Closure pageRef = {target -> createLink(controller: target, action:'') }
 
