@@ -19,7 +19,7 @@ class EventController {
                 ]
             }
         }
-        def max = [20,result.size()].min()
+        def max = [30,result.size()].min()
         [events: result.sort{it.date}.reverse()[0..<max]]
     }
 }

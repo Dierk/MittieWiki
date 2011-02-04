@@ -6,23 +6,19 @@ class CookService {
 
     static transactional = false
 
-    static final String CAP_WORD = '[A-Z][a-z0-9]+'
-    static final WIKI_WORD_PATTERN = ~/$CAP_WORD($CAP_WORD)+/
-
-    static final URI_PATTERN = /[.a-zA-Z0-9\/\-@&?=:_;~+!#$%^*()\[\]{}]+/
-    static final PROTOCOLS = /(http|https|mailto|ftp|file)/
-    static final URL_PATTERN = ~/$PROTOCOLS:$URI_PATTERN/
-
-    File pageDir
+    static final String CAP_WORD    = '[A-Z][a-z0-9]+'
+    static final WIKI_WORD_PATTERN  = ~/$CAP_WORD($CAP_WORD)+/
+    static final URI_PATTERN        = /[.a-zA-Z0-9\/\-@&?=:_;~+!#$%^*()\[\]{}]+/
+    static final PROTOCOLS          = /(http|https|mailto|ftp|file)/
+    static final URL_PATTERN        = ~/$PROTOCOLS:$URI_PATTERN/
 
     List<String> listPageNames() {
-        def dir = getPageDir()
-        def pageFiles = dir.listFiles().grep {it.name.endsWith('.wiki')}
-        pageFiles.collect { it.name - '.wiki'}
+        def pageFiles = pageDir.listFiles().grep { it.name.endsWith('.wiki') }
+        pageFiles.collect { it.name - '.wiki' }
     }
 
     String cookPage(String page, Closure pageRef) {
-        return cook(getRawText(page),pageRef)
+        cook getRawText(page), pageRef
     }
 
     /**
@@ -35,25 +31,22 @@ class CookService {
         result = result.replaceAll(URL_PATTERN) { match, rest ->
             "<a href='$match'>$match</a>"
         }
-
         return result
     }
 
-    File getRawFile(String page) {
-        new File(getPageDir(), page + '.wiki')
+    File getPageFile(String page) {
+        new File(pageDir, page + '.wiki')
     }
 
     String getRawText(String page) {
-        getRawFile(page).getText("ISO-8859-1")
+        getPageFile(page).getText("ISO-8859-1")
     }
 
     boolean isKnown(String page) {
-        getRawFile(page).exists()
+        getPageFile(page).exists()
     }
 
-    // allow overwrite from unit test
     File getPageDir() {
-        if (!pageDir) pageDir = new File(GrailsConfig.miki.pages.dir)
-        return pageDir
+        new File(GrailsConfig.miki.pages.dir)
     }
 }

@@ -6,7 +6,7 @@ class PageController {
 
     CookService cookService
 
-    Closure pageRef = {target -> createLink(controller: target, action:'') }
+    Closure pageRef = { target -> createLink(controller: target, action:'') }
 
     def index = {
         def page = params.page
@@ -19,14 +19,14 @@ class PageController {
     }
 
     def edit = {
-        File contentFile = cookService.getRawFile(params.page)
-        def p = (GrailsConfig.miki.command.edit.toString() + ' '+ contentFile.absolutePath).execute()
+        File contentFile = cookService.getPageFile(params.page)
+        def p = "${GrailsConfig.miki.command.edit} ${contentFile.absolutePath}".execute()
         p.waitForProcessOutput()
         redirect action: index, params:params
     }
 
     def open = {
-        (GrailsConfig.miki.command.open.toString() + ' ' + cookService.getPageDir()).execute()
+        "${GrailsConfig.miki.command.open} ${cookService.pageDir}".execute()
         redirect action: index, params:params
     }
 }
