@@ -4,7 +4,7 @@ import grails.plugin.spock.UnitSpec
 
 class CookServiceSpec extends UnitSpec {
 
-    CookService service = new CookService(pageDir: new File('test/pages'))
+    CookService service = new CookService(pageDirCache: new File("test/pages"))
 
     def "content that contains no valid reference should be rendered without anchors"(raw) {
         expect:

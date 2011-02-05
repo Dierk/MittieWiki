@@ -46,7 +46,9 @@ class CookService {
         getPageFile(page).exists()
     }
 
+    File pageDirCache // allow override in unit tests (not integration test)
     File getPageDir() {
-        new File(GrailsConfig.miki.pages.dir)
+        if (! pageDirCache) pageDirCache = new File(GrailsConfig.miki.pages.dir)
+        pageDirCache
     }
 }

@@ -10,8 +10,12 @@
         <a href="${createLink(controller:event.page, action:'')}" title="${event.note}">${event.page}</a>
     </g:sheet>
 
+    Upcoming:
     <table style="margin-top:40px;font-size:10px;">
-        <g:each in="${events}" var="event">
+        <% def today = new Date()%>
+        <g:each in="${
+        events.grep{ it.date >= today }
+        }" var="event">
             <tr><td nowrap valign="top">${event.date.format('EEE dd.MM.yy')}</td>
                 <td valign="top"><a href="${createLink(controller:event.page, action:'')}">${event.page}</a> </td>
                 <td>${event.note}</td>
