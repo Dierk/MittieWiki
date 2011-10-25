@@ -14,7 +14,7 @@ class CalendarSheetTagLib {
         def var = attributes.var ?: "event"
         def today = new Date()
         def anchorDay = firstDayInWeek(today)
-        def calEvents = attributes.events.grep { it.date >= anchorDay - 7 && it.date < anchorDay + 21 }
+        def calEvents = attributes.events.grep { it.date in (anchorDay - 7 .. anchorDay + 21) }
         def html = new MarkupBuilder(out)
         html.table(cellspacing:'1px') {
             tr {
