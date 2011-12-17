@@ -24,7 +24,7 @@ class CalendarSheetTagLib {
             tbody {
                 for (weekOffset in [-7, 0, 7, 14]) {
                     tr {
-                        for (dayOffset in 0..6){
+                        for (dayOffset in 0..6) {
                             def date = anchorDay + weekOffset + dayOffset
                             def style = (date == today) ? 'today' : (dayOffset < 2) ? 'weekend' : 'workday'
                             td('class':"$style events") {

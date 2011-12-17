@@ -4,7 +4,7 @@ class EventController {
 
     CookService cookService
 
-    def list = {
+    def list() {
         def events = new LinkedList()
         for (page in cookService.listPageNames()) {
             def text = cookService.getRawText(page)
@@ -13,6 +13,7 @@ class EventController {
                 events << [
                         page: page,
                         date: day,
+                        tip:  note,
                         note: cookService.cook(note)
                 ]
             }
