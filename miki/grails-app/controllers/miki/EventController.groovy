@@ -4,8 +4,6 @@ class EventController {
 
     CookService cookService
 
-    Closure pageRef = {target -> createLink(controller: target, action:'') }
-
     def list = {
         def events = new LinkedList()
         for (page in cookService.listPageNames()) {
@@ -15,7 +13,7 @@ class EventController {
                 events << [
                         page: page,
                         date: day,
-                        note: cookService.cook(note, pageRef)
+                        note: cookService.cook(note)
                 ]
             }
         }

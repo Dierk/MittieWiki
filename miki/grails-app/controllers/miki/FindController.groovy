@@ -4,7 +4,6 @@ class FindController {
 
     CookService cookService
 
-    Closure pageRef = {target -> createLink(controller: target, action:'') }
 
     def list = {
         def result = new LinkedList()
@@ -14,7 +13,7 @@ class FindController {
             }
             def text = cookService.getRawText(page)
             text.eachMatch(~/.*(${params.term})(.*)/) { match, term, note ->
-                result << [page: page, note: cookService.cook(match, pageRef)]
+                result << [page: page, note: cookService.cook(match)]
             }
         }
         [term: params.term, mentions: result.sort{it.page}]

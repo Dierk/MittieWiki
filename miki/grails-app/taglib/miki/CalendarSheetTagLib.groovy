@@ -3,7 +3,6 @@ package miki
 import groovy.xml.MarkupBuilder
 
 class CalendarSheetTagLib {
-    def out
 
     static Date firstDayInWeek(Date day) {
         day.clearTime()

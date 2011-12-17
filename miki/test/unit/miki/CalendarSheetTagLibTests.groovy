@@ -1,16 +1,14 @@
 package miki
 
-class CalendarSheetTagLibTests extends GroovyTestCase {
+import grails.test.mixin.TestFor
 
-    void testSheet() {
-        given:
-        def lib = new CalendarSheetTagLib()
-        def out = new StringWriter()
-        lib.out = new PrintWriter(out)
+@TestFor(CalendarSheetTagLib)
+class CalendarSheetTagLibTests {
+
+    void testSheetTag() {
         when:
-        lib.sheet([:]){ it }
+        def result = applyTemplate('<g:sheet/>')
         then:
-        def result      = out.buffer.toString()
         def todayCount  = (result =~ /today/).count
         def workdays    = (result =~ /workday/).count
         def weekendDays = (result =~ /weekend/).count

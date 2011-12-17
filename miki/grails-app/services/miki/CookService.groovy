@@ -17,16 +17,16 @@ class CookService {
         pageFiles.collect { it.name - '.wiki' }
     }
 
-    String cookPage(String page, Closure pageRef) {
-        cook getRawText(page), pageRef
+    String cookPage(String page) {
+        cook getRawText(page)
     }
 
     /**
      * @param pageRef Strategy on how to make a proper href to a wiki page
      */
-    String cook(String rawContent, Closure pageRef) {
+    String cook(String rawContent) {
         String result = rawContent.replaceAll(WIKI_WORD_PATTERN) { name, rest ->
-            isKnown(name) ? "<a href='${pageRef(name)}'>$name</a>" : name
+            isKnown(name) ? "<a href='/miki/$name'>$name</a>" : name
         }
         result = result.replaceAll(URL_PATTERN) { match, rest ->
             "<a href='$match'>$match</a>"

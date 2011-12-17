@@ -6,12 +6,10 @@ class PageController {
 
     CookService cookService
 
-    Closure pageRef = { target -> createLink(controller: target, action:'') }
-
     def index = {
-        def page = params.page
+        def page = params.page[0].toUpperCase() + params.page[1..-1]
         if (cookService.isKnown(page)) {
-            def text = cookService.cookPage(page, pageRef)
+            def text = cookService.cookPage(page)
             render view: 'show', model: [name: page, content: text]
         } else {
             render view: 'create', model: [name: page]
