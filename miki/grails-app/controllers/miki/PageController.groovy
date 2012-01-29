@@ -17,15 +17,18 @@ class PageController {
     }
 
     def edit = {
-        params.page = params.page[0].toUpperCase() + params.page[1..-1]
-        File contentFile = cookService.getPageFile(params.page)
-        def p = "${GrailsConfig.miki.command.edit} ${contentFile.absolutePath}".execute()
-        p.waitForProcessOutput()
-        redirect action: index, params:params
+        File contentFile = cookService.getPageFile(capitalize(params.page))
+        def editor = "${GrailsConfig.miki.command.edit} ${contentFile.absolutePath}".execute()
+        editor.waitForProcessOutput()
+        redirect url: selfUrl
     }
 
     def open = {
         "${GrailsConfig.miki.command.open} ${cookService.pageDir}".execute()
-        redirect action: index, params:params
+        redirect url: selfUrl
     }
+    
+    String capitalize(String lower) { lower[0].toUpperCase() + lower[1..-1] }
+    
+    String getSelfUrl() { "/${capitalize params.page}/index" }
 }

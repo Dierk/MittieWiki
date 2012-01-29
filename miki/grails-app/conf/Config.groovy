@@ -48,7 +48,7 @@ grails.spring.bean.packages = []
 environments {
 
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://localhost:8082/${appName}"
         miki.pages.dir = '/scripts/ruby/wiki'
         miki.command.open = 'open'
         miki.command.edit = 'mate -w'
