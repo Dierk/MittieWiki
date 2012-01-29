@@ -27,6 +27,7 @@ class PageControllerSpec extends ControllerSpec {
     def "open action calls finder"() {
         given: 'a page controller'
         PageController controller = new PageController()
+        controller.params.page = "NoSuchPage"
 
         when: "open new page is requested"
         controller.open()
