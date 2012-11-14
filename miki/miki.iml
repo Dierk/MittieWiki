@@ -54,8 +54,6 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/antlr/antlr/jars/antlr-2.7.6.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.2.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/junit/junit-dep/jars/junit-dep-4.9.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-core/jars/spock-core-0.6-groovy-1.8-SNAPSHOT.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-grails-support/jars/spock-grails-support-0.6-groovy-1.8-SNAPSHOT.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/xalan/xalan/jars/xalan-2.7.0.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.ant/ant-trax/jars/ant-trax-1.7.0.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.ant/ant-nodeps/jars/ant-nodeps-1.7.0.jar!/" />
@@ -79,6 +77,9 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-httpclient/commons-httpclient/jars/commons-httpclient-3.1.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sourceforge.htmlunit/htmlunit/jars/htmlunit-2.4.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/com.canoo.webtest/webtest/jars/webtest-3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.groovy/groovy-all/jars/groovy-all-1.8.5.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-core/jars/spock-core-0.6-groovy-1.8.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-grails-support/jars/spock-grails-support-0.6-groovy-1.8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -7,7 +7,7 @@ class PageController {
     CookService cookService
 
     def index = {
-        def page = params.page[0].toUpperCase() + params.page[1..-1]
+        def page = params.page.capitalize()
         if (cookService.isKnown(page)) {
             def text = cookService.cookPage(page)
             render view: 'show', model: [name: page, content: text]
@@ -17,7 +17,7 @@ class PageController {
     }
 
     def edit = {
-        File contentFile = cookService.getPageFile(capitalize(params.page))
+        File contentFile = cookService.getPageFile(params.page.capitalize())
         def editor = "${GrailsConfig.miki.command.edit} ${contentFile.absolutePath}".execute()
         editor.waitForProcessOutput()
         redirect url: selfUrl
@@ -27,8 +27,6 @@ class PageController {
         "${GrailsConfig.miki.command.open} ${cookService.pageDir}".execute()
         redirect url: selfUrl
     }
-    
-    String capitalize(String lower) { lower[0].toUpperCase() + lower[1..-1] }
-    
-    String getSelfUrl() { "/${capitalize params.page}/index" }
+
+    String getSelfUrl() { "/${params.page.capitalize()}/index" }
 }
