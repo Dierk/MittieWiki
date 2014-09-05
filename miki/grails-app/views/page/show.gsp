@@ -1,3 +1,4 @@
+<%@page defaultCodec="text/plain" %>
 <html>
 <head>
     <meta name="layout" content="main"/>

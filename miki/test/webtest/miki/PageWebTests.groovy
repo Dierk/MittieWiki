@@ -1,6 +1,28 @@
 package miki
 
+import java.lang.reflect.Method
+
 class PageWebTests extends grails.util.WebTest {
+
+    static def suite() {
+        def self = new PageWebTests()
+
+        boolean foundTest = false
+
+        self.class.methods.sort {m -> m.name}.each {Method method ->
+            def methodName = method.name
+            if (methodName.startsWith('test') && self.shouldRunTest(methodName, self.class.name)) {
+                if (!foundTest) {
+                    self.webTestMethodIfExists("classSetUp")
+                    foundTest = true
+                }
+                self.webTestMethod(method, true)
+            }
+        }
+        if (foundTest) {
+            self.webTestMethodIfExists("classTearDown")
+        }
+    }
 
     void testSimplePage() {
         invoke 'SimplePage'

@@ -1,8 +1,8 @@
 package miki
 
-import grails.plugin.spock.UnitSpec
+import spock.lang.Specification
 
-class CookServiceSpec extends UnitSpec {
+class CookServiceSpec extends Specification {
 
     CookService service = new CookService(pageDirCache: new File("test/pages"))
 

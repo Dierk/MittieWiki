@@ -1,10 +1,9 @@
 package miki
 
-import grails.util.GrailsConfig
-
 class CookService {
 
     static transactional = false
+    def grailsApplication
 
     static final String CAP_WORD    = '[A-Z][a-z0-9]+'
     static final WIKI_WORD_PATTERN  = ~/$CAP_WORD($CAP_WORD)+/
@@ -48,7 +47,7 @@ class CookService {
 
     File pageDirCache // allow override in unit tests (not integration test)
     File getPageDir() {
-        if (! pageDirCache) pageDirCache = new File(GrailsConfig.miki.pages.dir)
+        if (! pageDirCache) pageDirCache = new File((String)grailsApplication.config.miki.pages.dir)
         pageDirCache
     }
 }

@@ -1,9 +1,11 @@
 package miki
 
-import grails.plugin.spock.ControllerSpec
-import groovy.mock.interceptor.MockFor
+import grails.test.mixin.Mock
+import grails.test.mixin.TestFor
+import spock.lang.Specification
 
-class PageControllerSpec extends ControllerSpec {
+@TestFor(PageController)
+class PageControllerSpec extends Specification {
 
     def "index action dispatches to view based on availability of the page"(page, view) {
         given: 'a page controller'
@@ -20,8 +22,8 @@ class PageControllerSpec extends ControllerSpec {
 
         where:
         page            | view
-        'SimplePage'    | 'show'
-        'NoSuchPage'    | 'create'
+        'SimplePage'    | '/page/show'
+        'NoSuchPage'    | '/page/create'
     }
 
     def "open action calls finder"() {
@@ -33,20 +35,20 @@ class PageControllerSpec extends ControllerSpec {
         controller.open()
 
         then: "we should delegate to the index view"
-        controller.response.status == 200
+        controller.response.status < 400
     }
 
     def "edit action calls editor"() {
         given: 'a page controller'
         PageController controller = new PageController()
-        controller.cookService = new CookService()
+        controller.cookService = new CookService(grailsApplication : controller.grailsApplication)
 
         when: "open new page is requested"
         controller.params.page = "SimplePage"
         controller.edit()
 
         then: "we should delegate to the index view"
-        controller.response.status == 200
+        controller.response.status < 400
     }
 
 }
