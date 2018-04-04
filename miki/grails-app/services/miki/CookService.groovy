@@ -38,7 +38,7 @@ class CookService {
     }
 
     String getRawText(String page) {
-        getPageFile(page).getText("ISO-8859-1")
+        getPageFile(page).getText("UTF-8")
     }
 
     boolean isKnown(String page) {
